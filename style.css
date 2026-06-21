@@ -1,0 +1,1372 @@
+/* ============================================================
+   米魂 KOMEDAMA - スタイルシート
+   style.css
+
+   目次
+   1.  カラー・変数定義
+   2.  リセット・基本設定
+   3.  ヘッダー
+   4.  スマホメニュー
+   5.  ヒーローセクション
+   6.  セクション共通
+   7.  コンセプトセクション
+   8.  商品紹介セクション
+   9.  オンラインショップ（BASE）CTAセクション
+   10. 出店情報セクション
+   11. SNSセクション
+   12. お問い合わせセクション
+   13. フッター
+   14. ページトップボタン
+   15. アニメーション
+   16. レスポンシブ（スマホ対応）
+   ============================================================ */
+
+
+/* ============================================================
+   1. カラー・変数定義
+   色を変更する場合はここだけ編集すればOKです
+   ============================================================ */
+:root {
+  /* ベースカラー */
+  --white:      #FDFAF5;   /* 白（生成り白） */
+  --cream:      #F5EFE0;   /* クリーム */
+  --cream-dark: #EDE4CE;   /* 濃いクリーム */
+
+  /* テキストカラー */
+  --ink:        #1A1A1A;   /* メインテキスト（ほぼ黒） */
+  --ink-soft:   #3D3530;   /* サブテキスト（茶がかった黒） */
+  --gray:       #8C8070;   /* 補足テキスト（グレー） */
+
+  /* アクセントカラー */
+  --red:        #C0392B;   /* 赤（日の丸・強調） */
+  --red-light:  #E74C3C;   /* 赤（ホバー時） */
+  --green:      #2D5016;   /* 深緑（メインアクセント） */
+  --green-mid:  #3A6B1E;   /* 緑（ホバー時） */
+  --green-light:#5A8A32;   /* 薄緑 */
+  --gold:       #B8860B;   /* ゴールド（装飾） */
+  --navy:       #1B2A4A;   /* 紺（見出し・フッター） */
+
+  /* ボーダー・シャドウ */
+  --border:  rgba(45, 80, 22, 0.15);
+  --shadow:  rgba(27, 42, 74, 0.08);
+}
+
+
+/* ============================================================
+   2. リセット・基本設定
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* アンカーリンクをなめらかにスクロール */
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--white);
+  color: var(--ink);
+  line-height: 1.8;
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ============================================================
+   3. ヘッダー
+   ============================================================ */
+.site-header {
+  position: sticky;  /* スクロールしても上部に固定 */
+  top: 0;
+  z-index: 100;
+  background: rgba(253, 250, 245, 0.96);
+  backdrop-filter: blur(12px); /* すりガラス効果 */
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* ロゴ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo-ja {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+}
+
+.logo-en {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  color: var(--green);
+  font-weight: 500;
+}
+
+/* PCナビゲーション */
+.nav-list {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-list a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.25s;
+}
+
+/* ホバー時に下線アニメーション */
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--green);
+  transition: width 0.3s;
+}
+
+.nav-list a:hover {
+  color: var(--green);
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+/* Amazon購入ボタン（ヘッダー内） */
+.nav-cta {
+  background: var(--red) !important;
+  color: var(--white) !important;
+  padding: 7px 18px !important;
+  border-radius: 3px;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.12em !important;
+  transition: background 0.25s !important;
+}
+
+.nav-cta:hover {
+  background: var(--red-light) !important;
+}
+
+.nav-cta::after {
+  display: none !important; /* 下線アニメーションは不要 */
+}
+
+/* ハンバーガーボタン（スマホのみ表示） */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+
+/* ============================================================
+   4. スマホメニュー（全画面オーバーレイ）
+   ============================================================ */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(253, 250, 245, 0.98);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+
+/* .open クラスがついたら表示（script.jsで制御） */
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.5rem;
+  color: var(--navy);
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+
+.mobile-nav a:hover {
+  color: var(--green);
+}
+
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+
+/* ============================================================
+   5. ヒーローセクション
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+/* 背景グラデーション装飾 */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 75% 20%, rgba(45, 80, 22, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 10% 75%, rgba(192, 57, 43, 0.05) 0%, transparent 40%);
+}
+
+/* 下部の波形装飾 */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  overflow: hidden;
+}
+
+.hero-wave svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ヒーロー内部レイアウト（2カラム） */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* バッジ（緑のラベル） */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  padding: 5px 16px;
+  border-radius: 2px;
+  margin-bottom: 28px;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #9ECC5A;
+  border-radius: 50%;
+}
+
+/* キャッチコピー */
+.hero-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem); /* 画面幅に応じて自動調整 */
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.hero-title .accent {
+  color: var(--red);
+}
+
+.hero-subtitle {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.9rem;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.hero-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 2.1;
+  margin-bottom: 40px;
+  max-width: 420px;
+}
+
+/* CTAボタン群 */
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* 共通ボタンスタイル */
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+  padding: 14px 32px;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-primary:hover {
+  background: var(--green-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.25);
+}
+
+.btn-secondary {
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  padding: 13px 28px;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* 食イメージビジュアルエリア */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image-wrap {
+  position: relative;
+  width: 512px;
+  height: 512px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(27, 42, 74, 0.2);
+  margin: 0 auto;
+}
+
+/* 食の画像 */
+.hero-food-img {
+  width: 512px;
+  height: 512px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 8s ease;
+}
+
+.hero-image-wrap:hover .hero-food-img {
+  transform: scale(1.04); /* ゆっくりズームイン */
+}
+
+/* 画像の上にうっすらオーバーレイ（和の雰囲気を出す）*/
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(27, 42, 74, 0.15) 0%,
+    rgba(45, 80, 22, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* フローティングタグ */
+.hero-tag {
+  position: absolute;
+  background: rgba(253, 250, 245, 0.95);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 16px var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-tag-1 { bottom: 24px; left: 20px; }
+.hero-tag-2 { top: 20px;    right: 20px; }
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-red   { background: var(--red); }
+.dot-green { background: var(--green-light); }
+
+
+/* ============================================================
+   6. セクション共通スタイル
+   ============================================================ */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+/* セクションラベル（英語小文字）*/
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  color: var(--green);
+  font-weight: 500;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* セクションタイトル */
+.section-title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+.section-title .acc {
+  color: var(--red);
+}
+
+/* セクション説明文 */
+.section-desc {
+  margin-top: 16px;
+  font-size: 0.86rem;
+  color: var(--gray);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2.1;
+}
+
+/* タイトル下のアクセントライン */
+.divider {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, var(--green), var(--gold));
+  margin: 16px auto 0;
+}
+
+.divider-shop {
+  background: linear-gradient(to right, var(--green), var(--gold));
+}
+
+
+/* ============================================================
+   7. コンセプトセクション
+   ============================================================ */
+.concept {
+  padding: 100px 24px;
+  background: var(--white);
+}
+
+.concept-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px; /* カード間の隙間（区切り線のように見える）*/
+  margin-top: 56px;
+}
+
+.concept-card {
+  background: var(--cream);
+  padding: 48px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.concept-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ホバー時に下部に緑ライン */
+.concept-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+  transform-origin: left;
+}
+
+.concept-card:hover::after {
+  transform: scaleX(1);
+}
+
+.concept-icon {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.concept-card h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+}
+
+.concept-card p {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.95;
+}
+
+
+/* ============================================================
+   8. 商品紹介セクション
+   ============================================================ */
+.products {
+  padding: 100px 24px;
+  background: var(--cream);
+}
+
+.products-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px var(--shadow);
+  transition: all 0.35s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(27, 42, 74, 0.12);
+}
+
+/* 商品画像エリア */
+.product-img {
+  height: 200px;
+  background: var(--cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 画像を使う場合のスタイル */
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(27, 42, 74, 0.06));
+}
+
+/* 商品バッジ（「人気No.1」など）*/
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.product-body {
+  padding: 24px;
+}
+
+.product-tag {
+  font-size: 0.68rem;
+  color: var(--green);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.product-name {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+
+.product-desc {
+  font-size: 0.79rem;
+  color: var(--gray);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+/* オンラインショップへのリンク */
+.product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--green);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: gap 0.25s;
+}
+
+.product-link:hover {
+  gap: 10px;
+}
+
+.product-link::after {
+  content: '→';
+}
+
+
+/* ============================================================
+   9. オンラインショップ（BASE）CTAセクション
+   ============================================================ */
+
+/* BASEショップCTAセクション */
+.shop-cta {
+  padding: 88px 24px;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景に大きく「米魂」の文字（装飾）*/
+.shop-cta::before {
+  content: '米魂';
+  position: absolute;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 18rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.025);
+  top: -30px;
+  right: -10px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.shop-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* 紺バック用テキスト色 */
+.shop-inner .section-label { color: #9ECC5A; }
+.shop-inner .section-title { color: var(--white); }
+.shop-inner .section-desc  { color: rgba(255, 255, 255, 0.58); }
+
+/* ボタン群 */
+.shop-cta-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+/* BASEボタン（メイン）*/
+.base-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: var(--white);
+  padding: 16px 40px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+}
+
+.base-btn:hover {
+  background: var(--green-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(45, 80, 22, 0.4);
+}
+
+.base-logo {
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+}
+
+/* Amazonボタン（サブ）*/
+.amz-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 28px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  font-style: italic;
+}
+
+.amz-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 注釈テキスト */
+.shop-note {
+  margin-top: 20px;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.06em;
+}
+
+
+/* ============================================================
+   10. 出店情報セクション
+   ============================================================ */
+.locations {
+  padding: 100px 24px;
+  background: var(--white);
+}
+
+.locations-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.location-item {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 32px;
+  background: var(--cream);
+  transition: background 0.25s;
+}
+
+.location-item:hover {
+  background: var(--cream-dark);
+}
+
+/* 日付表示 */
+.location-date { text-align: center; }
+
+.location-month {
+  font-size: 0.68rem;
+  color: var(--green);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.location-day {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.location-dow {
+  font-size: 0.68rem;
+  color: var(--gray);
+}
+
+/* 出店情報テキスト */
+.location-info h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1rem;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.location-info p {
+  font-size: 0.79rem;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* バッジ（移動販売 / マーケット） */
+.loc-badge {
+  font-size: 0.67rem;
+  padding: 4px 12px;
+  border-radius: 2px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.badge-truck  { background: var(--green); color: var(--white); }
+.badge-market { background: var(--gold);  color: var(--white); }
+
+.loc-note {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 0.78rem;
+  color: var(--gray);
+}
+
+
+/* ============================================================
+   11. SNSセクション
+   ============================================================ */
+.sns {
+  padding: 80px 24px;
+  background: var(--cream);
+  text-align: center;
+}
+
+.sns-inner {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.sns-title {
+  font-size: clamp(1.4rem, 3.5vw, 2rem) !important;
+}
+
+.sns-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.sns-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  border: 1.5px solid transparent;
+}
+
+.sns-ig {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: var(--white);
+}
+
+.sns-ig:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.sns-line {
+  background: #00B900;
+  color: var(--white);
+}
+
+.sns-line:hover {
+  background: #00A000;
+  transform: translateY(-2px);
+}
+
+.sns-x {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.sns-x:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+
+/* ============================================================
+   12. お問い合わせセクション
+   ============================================================ */
+.contact {
+  padding: 100px 24px;
+  background: var(--white);
+}
+
+.contact-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Googleフォーム埋め込みラッパー */
+.google-form-wrap {
+  margin-top: 56px;
+}
+
+.google-form-wrap iframe {
+  width: 100%;
+  min-height: 900px;
+  border: none;
+  border-radius: 4px;
+  background: var(--cream);
+  display: block;
+}
+
+.contact-note {
+  text-align: center;
+  font-size: 0.74rem;
+  color: var(--gray);
+  line-height: 1.9;
+  margin-top: 20px;
+}
+
+
+/* ============================================================
+   13. フッター
+   ============================================================ */
+.site-footer {
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.65);
+  padding: 64px 24px 32px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* フッター内ロゴ */
+.footer-brand .logo-ja { color: var(--white); }
+.footer-brand .logo-en { color: rgba(255, 255, 255, 0.45); }
+
+.footer-tagline {
+  font-size: 0.79rem;
+  margin-top: 16px;
+  line-height: 2.1;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-col h4 {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col ul a {
+  font-size: 0.79rem;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.25s;
+}
+
+.footer-col ul a:hover {
+  color: var(--white);
+}
+
+/* フッター下部 */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.06em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.25s;
+}
+
+.footer-links a:hover {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* ============================================================
+   14. ページトップボタン
+   ============================================================ */
+.scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(45, 80, 22, 0.3);
+  transition: all 0.3s;
+  z-index: 50;
+  opacity: 0;           /* 初期は非表示 */
+  pointer-events: none; /* クリック無効 */
+}
+
+/* script.jsで .visible を付与したら表示 */
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top:hover {
+  background: var(--green-mid);
+  transform: translateY(-3px);
+}
+
+
+/* ============================================================
+   15. アニメーション
+   ============================================================ */
+
+/* スクロールフェードイン */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 遅延クラス（カードを順番にフェードイン）*/
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.22s; }
+.d3 { transition-delay: 0.34s; }
+
+/* ロゴリング回転 */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ロゴ浮遊 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+
+/* ============================================================
+   16. レスポンシブ対応（スマホファースト）
+   タブレット: 900px以下
+   スマホ:     640px以下
+   ============================================================ */
+
+/* タブレット以下 */
+@media (max-width: 900px) {
+
+  /* ヒーロー: 1カラムに変更 */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    padding: 64px 20px 56px;
+  }
+
+  .hero-content { order: 2; } /* テキストを下に */
+  .hero-visual  { order: 1; } /* ロゴを上に */
+
+  .hero-desc    { margin: 0 auto 40px; }
+  .hero-actions { justify-content: center; }
+  .hero-image-wrap { width: 100%; height: 360px; }
+  .hero-food-img { width: 100%; height: 360px; }
+
+  /* コンセプト: 1カラムに */
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 商品: 1カラムに */
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* フォーム: 1カラムに */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* フッター: 1カラムに */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* 出店情報: バッジ非表示 */
+  .location-item {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .loc-badge {
+    display: none;
+  }
+}
+
+/* スマホ */
+@media (max-width: 640px) {
+
+  /* PCナビを非表示、ハンバーガーを表示 */
+  .nav-list   { display: none; }
+  .hamburger  { display: flex; }
+
+  /* ロゴを小さく */
+  .hero-image-wrap { width: 100%; height: 260px; border-radius: 6px; }
+  .hero-food-img { width: 100%; height: 260px; }
+
+  /* フローティングタグを非表示 */
+  .hero-tag-1,
+  .hero-tag-2 { display: none; }
+
+  /* 出店情報: 縦並びに */
+  .location-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px;
+  }
+
+  /* フッター下部: 縦並びに */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* フォームの余白調整 */
+  .concept  { padding: 64px 20px; }
+  .products { padding: 64px 20px; }
+  .contact  { padding: 64px 20px; }
+  .locations{ padding: 64px 20px; }
+}
+
+
+/* ============================================================
+   キャッチコピー画像
+   hero-catch.png を images/common/ に置いてください
+   ============================================================ */
+.hero-catch-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* 画像がない場合のフォールバック（テキスト表示）*/
+.hero-catch-img[src="images/common/hero-catch.png"]::before {
+  content: '日本の食を、あなたのもとへ。';
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--navy);
+  display: block;
+}
+
+
+/* ============================================================
+   Coming Soon（出店情報）
+   ============================================================ */
+.coming-soon {
+  text-align: center;
+  padding: 64px 24px;
+  background: var(--cream);
+  border-radius: 4px;
+  margin-top: 56px;
+}
+
+.coming-soon-text {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+
+.coming-soon-sub {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+/* TikTokボタン */
+.sns-tiktok {
+  background: #111;
+  color: var(--white);
+  border-color: #111;
+}
+
+.sns-tiktok:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
