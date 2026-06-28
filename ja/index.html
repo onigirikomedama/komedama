@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ========================================
+       SEO基本設定
+       ページタイトルや説明文はここを編集してください
+       ======================================== -->
+  <title>米魂 KOMEDAMA | 日本の食を、あなたのもとへ</title>
+  <meta name="description" content="米魂（KOMEDAMA）は、日本各地の豊かな食文化と地域食品を移動販売とオンラインでお届けするブランドです。">
+  <meta name="keywords" content="米魂, KOMEDAMA, 地域食品, 移動販売, 日本食, BASE, オンラインショップ">
+  <meta name="author" content="米魂 KOMEDAMA">
+
+  <!-- OGP設定（SNSでシェアされたときの表示）-->
+  <meta property="og:title" content="米魂 KOMEDAMA | 日本の食を、あなたのもとへ">
+  <meta property="og:description" content="日本各地の豊かな食文化と地域食品を、移動販売とオンラインで丁寧にお届けするブランドです。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/"><!-- ← 取得後にドメインを変更してください -->
+  <meta property="og:image" content="https://your-domain.com/images/common/ogp.jpg"><!-- ← OGP画像を用意してください -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ファビコン（ブラウザタブに表示されるアイコン）-->
+  <!-- <link rel="icon" href="images/common/favicon.ico"> -->
+  <!-- <link rel="apple-touch-icon" href="images/common/apple-touch-icon.png"> -->
+
+  <!-- Google Fonts（日本語フォント）-->
+  <!-- 表示速度を優先したい場合はこのブロックを削除し、style.cssのfont-familyをsans-serifに変更してください -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- スタイルシート読み込み -->
+  <link rel="alternate" hreflang="ja" href="../ja/">
+  <link rel="alternate" hreflang="en" href="../en/">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- ========================================
+       ヘッダー
+       ロゴ・ナビゲーションメニュー
+       ======================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- ロゴ -->
+      <a href="#home" class="logo" aria-label="米魂 トップへ戻る">
+        <!-- logo256px.png を images/logo/ に配置済み -->
+        <img src="../images/logo/logo256px.png" alt="米魂ロゴ" width="44" height="44">
+        <div class="logo-text">
+          <span class="logo-ja">米魂</span>
+          <span class="logo-en">KOMEDAMA</span>
+        </div>
+      </a>
+
+      <!-- PCナビゲーション -->
+      <nav aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li><a href="#concept">コンセプト</a></li>
+          <li><a href="#products">商品</a></li>
+          <li><a href="#locations">出店情報</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+          <!-- BASEショップへのリンク -->
+          <li><a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="nav-cta">オンラインショップ</a></li>
+          <li><a href="../en/" class="lang-switch">EN</a></li>
+        </ul>
+      </nav>
+
+      <!-- スマホ用ハンバーガーボタン -->
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- スマホ用全画面メニュー -->
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+    <button class="mobile-close" id="mobileClose" aria-label="メニューを閉じる">✕</button>
+    <a href="#concept">コンセプト</a>
+    <a href="#products">商品</a>
+    <a href="#locations">出店情報</a>
+    <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer">オンラインショップ</a>
+    <a href="../en/">English</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+
+
+  <!-- ========================================
+       メインコンテンツ
+       ======================================== -->
+  <main>
+
+    <!-- ヒーローセクション -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <!-- 波形の装飾 -->
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,120 L0,120 Z" fill="#FDFAF5" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="hero-inner">
+
+        <!-- 左：テキストエリア -->
+        <div class="hero-content">
+          <span class="hero-badge">移動販売 × EC販売</span>
+
+          <!-- キャッチコピー画像
+               フォント崩れを防ぐため画像で表示しています
+               画像は images/common/hero-catch.png に配置してください
+               推奨サイズ：幅 800px 以上・透過PNG・白文字 -->
+          <h1 class="hero-title">
+            <img
+              src="../images/common/hero-catch.png"
+              alt="日本の食を、あなたのもとへ。"
+              class="hero-catch-img"
+              width="480"
+            >
+          </h1>
+
+          <p class="hero-subtitle">Food Culture × Local Products</p>
+
+          <p class="hero-desc">
+            米魂は、日本各地の豊かな食文化と地域食品を、<br>
+            移動販売とオンラインで丁寧にお届けするブランドです。<br>
+            大地の恵みと、作り手の魂を、食卓に。
+          </p>
+
+          <div class="hero-actions">
+            <a href="#products" class="btn-primary">商品を見る</a>
+            <a href="#locations" class="btn-secondary">出店スケジュール</a>
+          </div>
+        </div>
+
+        <!-- 右：食のイメージビジュアル -->
+        <div class="hero-visual">
+          <!-- Unsplash フリー素材（商用利用可）
+               自分の画像に変えたい場合は src を images/common/hero.jpg などに変更してください -->
+          <div class="hero-image-wrap">
+            <img
+              class="hero-food-img"
+              src="../images/common/hero.png"
+              alt="おにぎりと姫路城のある日本食のイメージ"
+              width="512"
+              loading="eager"
+            >
+            <div class="hero-image-overlay" aria-hidden="true"></div>
+            <!-- 画像下部の帯テキスト -->
+            <div class="hero-image-band" aria-hidden="true">
+              <span>産地直送</span>
+              <span class="band-sep">×</span>
+              <span>移動販売</span>
+              <span class="band-sep">×</span>
+              <span>オンライン販売</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- コンセプトセクション -->
+    <section class="concept" id="concept">
+      <div class="concept-inner">
+
+        <div class="section-header fade-in">
+          <span class="section-label">Our Concept</span>
+          <h2 class="section-title">米魂の<span class="acc">想い</span></h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-desc">
+            日本の食文化と生産者の情熱を、より多くの人に届けたい。<br>
+            その一心で、米魂は走り続けます。
+          </p>
+        </div>
+
+        <!-- コンセプト3カード -->
+        <div class="concept-grid">
+
+          <div class="concept-card fade-in d1">
+            <!-- 画像を使う場合: <img src="../images/common/concept-farm.jpg" alt="産地直送"> -->
+            <span class="concept-icon" aria-hidden="true">🌾</span>
+            <h3>産地直送の美味しさ</h3>
+            <p>全国各地の農家・生産者と直接つながり、鮮度と品質にこだわった食品をお届けします。</p>
+          </div>
+
+          <div class="concept-card fade-in d2">
+            <span class="concept-icon" aria-hidden="true">🚚</span>
+            <h3>移動販売で出会う食</h3>
+            <p>マルシェや地域イベントに出店し、実際に手に取って選んでいただける機会を大切にしています。</p>
+          </div>
+
+          <div class="concept-card fade-in d3">
+            <span class="concept-icon" aria-hidden="true">📦</span>
+            <h3>全国へ、オンラインで</h3>
+            <p>遠方の方にも楽しんでいただけるよう、BASEオンラインショップを通じて全国どこへでもお届けします。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 商品紹介セクション -->
+    <section class="products" id="products">
+      <div class="products-inner">
+
+        <div class="section-header fade-in">
+          <span class="section-label">Products</span>
+          <h2 class="section-title">おすすめ<span class="acc">商品</span></h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-desc">丹精込めて選び抜いた、日本の食の逸品をご紹介します。</p>
+        </div>
+
+        <!-- 商品カード
+             商品を追加する場合は .product-card のブロックをコピーして増やしてください -->
+        <div class="products-grid">
+
+          <!-- 商品1 -->
+          <article class="product-card fade-in d1">
+            <div class="product-img">
+              <!-- 商品画像: images/products/ に画像を置いて src を変更してください -->
+              <!-- <img src="../images/products/hitomebore.jpg" alt="特選 魂のひとめぼれ"> -->
+              <span aria-hidden="true">🍚</span>
+              <span class="product-badge">人気 No.1</span>
+            </div>
+            <div class="product-body">
+              <p class="product-tag">Premium Rice</p>
+              <h3 class="product-name">特選 魂のひとめぼれ</h3>
+              <p class="product-desc">
+                東北の清流と豊かな大地で育った、甘みと香りが際立つ特別栽培米。
+                炊き上がりのツヤと粘りが格別です。
+              </p>
+              <!-- BASE商品ページのURLに変更してください -->
+              <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="product-link">
+                オンラインショップで購入する
+              </a>
+            </div>
+          </article>
+
+          <!-- 商品2 -->
+          <article class="product-card fade-in d2">
+            <div class="product-img">
+              <!-- <img src="../images/products/tsukemono.jpg" alt="農家直伝 手作り漬物セット"> -->
+              <span aria-hidden="true">🫙</span>
+            </div>
+            <div class="product-body">
+              <p class="product-tag">Artisan Pickles</p>
+              <h3 class="product-name">農家直伝 手作り漬物セット</h3>
+              <p class="product-desc">
+                農家の母から受け継がれた秘伝のレシピで仕込んだ、
+                化学調味料不使用の本格漬物。ご飯の友に。
+              </p>
+              <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="product-link">
+                オンラインショップで購入する
+              </a>
+            </div>
+          </article>
+
+          <!-- 商品3 -->
+          <article class="product-card fade-in d3">
+            <div class="product-img">
+              <!-- <img src="../images/products/gift-set.jpg" alt="地域限定 郷土食ギフトセット"> -->
+              <span aria-hidden="true">🍱</span>
+              <span class="product-badge">新商品</span>
+            </div>
+            <div class="product-body">
+              <p class="product-tag">Regional Delicacy</p>
+              <h3 class="product-name">地域限定 郷土食ギフトセット</h3>
+              <p class="product-desc">
+                各地の郷土料理・特産品を詰め合わせた、
+                日本の食文化が凝縮されたギフトセット。贈り物にも最適。
+              </p>
+              <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="product-link">
+                オンラインショップで購入する
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- オンラインショップ（BASE）CTAセクション -->
+    <section class="shop-cta" id="shop">
+      <div class="shop-inner fade-in">
+        <span class="section-label">Online Shop</span>
+        <h2 class="section-title">オンラインショップ</h2>
+        <div class="divider divider-shop" aria-hidden="true"></div>
+        <p class="section-desc">
+          米魂のオンラインショップでご購入いただけます。<br>
+          全国どこへでも安心・迅速にお届けします。
+        </p>
+        <div class="shop-cta-btns">
+          <!-- BASEショップ -->
+          <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="base-btn">
+            米魂のショップへ
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 出店情報セクション -->
+    <section class="locations" id="locations">
+      <div class="locations-inner">
+
+        <div class="section-header fade-in">
+          <span class="section-label">Schedule</span>
+          <h2 class="section-title">出店<span class="acc">情報</span></h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-desc">
+            直接お会いできる出店スケジュールをご案内しています。<br>
+            お近くにお越しの際はぜひお立ち寄りください。
+          </p>
+        </div>
+
+        <!-- Coming Soon表示 -->
+        <div class="coming-soon fade-in">
+          <p class="coming-soon-text">Coming Soon</p>
+          <p class="coming-soon-sub">出店情報は決まり次第、SNSでお知らせします。<br>フォローをお忘れなく！</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SNSセクション -->
+    <section class="sns">
+      <div class="sns-inner fade-in">
+        <span class="section-label">Follow Us</span>
+        <h2 class="section-title sns-title">SNSで最新情報をチェック</h2>
+        <div class="divider" aria-hidden="true"></div>
+
+        <div class="sns-links">
+          <a href="https://www.instagram.com/onigiri.komedama?igsh=MXRsYmVnbmxiNncwYw==" target="_blank" rel="noopener noreferrer" class="sns-btn sns-ig">
+            📸 Instagram
+          </a>
+          <a href="https://www.tiktok.com/@onigiri.komedama?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="sns-btn sns-tiktok">
+            🎵 TikTok
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- お問い合わせセクション -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+
+        <div class="section-header fade-in">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">お<span class="acc">問い合わせ</span></h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-desc">商品・出店・コラボレーションなど、お気軽にご連絡ください。</p>
+        </div>
+
+        <!-- Googleフォーム埋め込み
+             件数無制限・無料・Gmailに通知が届きます -->
+        <div class="google-form-wrap fade-in">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScALvCP625DVWomPVhwGw1CGhiQK8gAbkyOa28ZDNepqT5XbA/viewform?embedded=true"
+            width="100%"
+            height="900"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="米魂 お問い合わせフォーム"
+            loading="lazy"
+          >
+            読み込んでいます…
+          </iframe>
+          <p class="contact-note">
+            通常 2〜3 営業日以内にご返信いたします。<br>
+            お急ぎの場合は SNS の DM よりお問い合わせください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================
+       フッター
+       ======================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+        <!-- ブランド説明 -->
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="../images/logo/logo256px.png" alt="米魂ロゴ" width="36" height="36">
+            <div class="logo-text">
+              <span class="logo-ja">米魂</span>
+              <span class="logo-en">KOMEDAMA</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            日本の食文化と地域食品を、<br>
+            移動販売とECで全国へ届ける。<br>
+            大地の恵みと作り手の魂を、食卓に。
+          </p>
+        </div>
+
+        <!-- ナビゲーション -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#concept">コンセプト</a></li>
+            <li><a href="#products">商品紹介</a></li>
+            <li><a href="#locations">出店情報</a></li>
+            <li><a href="#shop">オンラインショップ</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <!-- 将来ページが増えたらここに追加 -->
+            <!-- <li><a href="news.html">お知らせ</a></li> -->
+            <!-- <li><a href="en/index.html">English</a></li> -->
+          </ul>
+        </div>
+
+        <!-- SNSリンク -->
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/onigiri.komedama?igsh=MXRsYmVnbmxiNncwYw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@onigiri.komedama?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+            <li><a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer">BASE オンラインショップ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- コピーライト -->
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 米魂 KOMEDAMA. All Rights Reserved.</p>
+        <div class="footer-links">
+          <!-- 将来ページを作成したらリンクを有効にしてください -->
+          <a href="#">プライバシーポリシー</a>
+          <a href="#">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ページトップへ戻るボタン -->
+  <button class="scroll-top" id="scrollTop" aria-label="ページトップへ戻る">↑</button>
+
+  <!-- JavaScriptファイル読み込み（bodyの最後に置くことで表示速度が上がります）-->
+  <script src="../script.js"></script>
+
+</body>
+</html>

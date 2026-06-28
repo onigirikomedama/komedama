@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOMEDAMA | Japanese Food, Delivered to You</title>
+  <meta name="description" content="KOMEDAMA delivers the rich food culture and regional products of Japan through mobile food vending and online shopping.">
+  <meta name="keywords" content="KOMEDAMA, Japanese food, onigiri, regional products, Japanese cuisine, BASE shop">
+  <meta name="author" content="KOMEDAMA">
+  <meta property="og:title" content="KOMEDAMA | Japanese Food, Delivered to You">
+  <meta property="og:description" content="We deliver the rich food culture and regional products of Japan through mobile food vending and online.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/en/">
+  <meta property="og:image" content="https://your-domain.com/images/common/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="ja" href="../ja/">
+  <link rel="alternate" hreflang="en" href="../en/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;600;800&family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* 英語ページ用フォント上書き */
+    body { font-family: 'Inter', sans-serif; }
+    .logo-ja, .section-title, .hero-title, .concept-card h3,
+    .product-name, .location-day, .coming-soon-text,
+    .footer-brand .logo-ja { font-family: 'Playfair Display', serif; }
+    .hero-title { font-family: 'Playfair Display', serif; letter-spacing: 0.01em; }
+    .section-title { font-family: 'Playfair Display', serif; }
+    .mobile-nav a { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo" aria-label="KOMEDAMA - Back to top">
+        <img src="../images/logo/logo256px.png" alt="KOMEDAMA Logo" width="44" height="44">
+        <div class="logo-text">
+          <span class="logo-ja">米魂</span>
+          <span class="logo-en">KOMEDAMA</span>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#locations">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="nav-cta">Online Shop</a></li>
+          <li><a href="../ja/" class="lang-switch">JA</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <a href="#concept">Concept</a>
+    <a href="#products">Products</a>
+    <a href="#locations">Events</a>
+    <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer">Online Shop</a>
+    <a href="#contact">Contact</a>
+    <a href="../ja/">日本語</a>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,120 L0,120 Z" fill="#FDFAF5" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <span class="hero-badge">Mobile Vending × E-Commerce</span>
+          <h1 class="hero-title">
+            Japanese Food,<br>
+            <span class="accent">Delivered to You.</span>
+          </h1>
+          <p class="hero-subtitle">Food Culture × Local Products</p>
+          <p class="hero-desc">
+            KOMEDAMA brings the rich food culture and regional<br>
+            specialties of Japan directly to you — through<br>
+            mobile vending and our online shop.<br>
+            The bounty of the land, the soul of the maker.
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="btn-primary">View Products</a>
+            <a href="#locations" class="btn-secondary">Event Schedule</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrap">
+            <img
+              class="hero-food-img"
+              src="../images/common/hero.png"
+              alt="Japanese food image with onigiri and Himeji Castle"
+              width="512"
+              loading="eager"
+            >
+            <div class="hero-image-overlay" aria-hidden="true"></div>
+            <div class="hero-image-band" aria-hidden="true">
+              <span>Farm Fresh</span>
+              <span class="band-sep">×</span>
+              <span>Mobile Vending</span>
+              <span class="band-sep">×</span>
+              <span>Online Shop</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONCEPT -->
+    <section class="concept" id="concept">
+      <div class="concept-inner">
+        <div class="section-header fade-in">
+          <span class="section-label">Our Concept</span>
+          <h2 class="section-title">Our <span class="acc">Philosophy</span></h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-desc">
+            We want to share the passion of Japan's producers<br>
+            and its rich food culture with as many people as possible.
+          </p>
+        </div>
+        <div class="concept-grid">
+          <div class="concept-card fade-in d1">
+            <span class="concept-icon" aria-hidden="true">🌾</span>
+            <h3>Fresh from the Source</h3>
+            <p>We work directly with farmers and producers across Japan to bring you the freshest, highest-quality regional foods.</p>
+          </div>
+          <div class="concept-card fade-in d2">
+            <span class="concept-icon" aria-hidden="true">🚚</span>
+            <h3>Meet Us at the Market</h3>
+            <p>We set up at local markets and events so you can see, touch, and taste our products in person before you buy.</p>
+          </div>
+          <div class="concept-card fade-in d3">
+            <span class="concept-icon" aria-hidden="true">📦</span>
+            <h3>Shop Online, Nationwide</h3>
+            <p>Can't visit us in person? Order from our online shop and we'll deliver authentic Japanese flavors straight to your door.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+      <div class="products-inner">
+        <div class="section-header fade-in">
+          <span class="section-label">Products</span>
+          <h2 class="section-title">Our <span class="acc">Favorites</span></h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-desc">A carefully curated selection of Japan's finest regional foods.</p>
+        </div>
+        <div class="products-grid">
+
+          <article class="product-card fade-in d1">
+            <div class="product-img">
+              <span aria-hidden="true">🍚</span>
+              <span class="product-badge">Best Seller</span>
+            </div>
+            <div class="product-body">
+              <p class="product-tag">Premium Rice</p>
+              <h3 class="product-name">Special Hitomebore Rice</h3>
+              <p class="product-desc">
+                Grown in the pure waters and fertile soil of the Tohoku region,
+                this special-cultivation rice offers exceptional sweetness and aroma
+                with a perfect glossy finish.
+              </p>
+              <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="product-link">
+                Buy in our shop
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card fade-in d2">
+            <div class="product-img">
+              <span aria-hidden="true">🫙</span>
+            </div>
+            <div class="product-body">
+              <p class="product-tag">Artisan Pickles</p>
+              <h3 class="product-name">Handmade Tsukemono Set</h3>
+              <p class="product-desc">
+                Traditional pickles crafted using a secret family recipe passed down
+                through generations, with no artificial seasonings.
+                The perfect companion to steamed rice.
+              </p>
+              <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="product-link">
+                Buy in our shop
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card fade-in d3">
+            <div class="product-img">
+              <span aria-hidden="true">🍱</span>
+              <span class="product-badge">New</span>
+            </div>
+            <div class="product-body">
+              <p class="product-tag">Regional Delicacy</p>
+              <h3 class="product-name">Local Specialty Gift Set</h3>
+              <p class="product-desc">
+                A curated gift set packed with local dishes and specialties
+                from across Japan — the essence of Japanese food culture
+                in one beautiful box.
+              </p>
+              <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="product-link">
+                Buy in our shop
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ONLINE SHOP CTA -->
+    <section class="shop-cta" id="shop">
+      <div class="shop-inner fade-in">
+        <span class="section-label">Online Shop</span>
+        <h2 class="section-title">Shop Online</h2>
+        <div class="divider divider-shop" aria-hidden="true"></div>
+        <p class="section-desc">
+          All KOMEDAMA products are available in our official online shop.<br>
+          Fast and reliable delivery anywhere in Japan — and coming soon internationally.
+        </p>
+        <div class="shop-cta-btns">
+          <a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer" class="base-btn">
+            Visit Our Shop
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- EVENTS / LOCATIONS -->
+    <section class="locations" id="locations">
+      <div class="locations-inner">
+        <div class="section-header fade-in">
+          <span class="section-label">Schedule</span>
+          <h2 class="section-title">Event <span class="acc">Schedule</span></h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-desc">
+            Come meet us in person at local markets and food events.<br>
+            We'd love to see you there!
+          </p>
+        </div>
+        <div class="coming-soon fade-in">
+          <p class="coming-soon-text">Coming Soon</p>
+          <p class="coming-soon-sub">Event details will be announced on our SNS.<br>Follow us so you don't miss out!</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SNS -->
+    <section class="sns">
+      <div class="sns-inner fade-in">
+        <span class="section-label">Follow Us</span>
+        <h2 class="section-title sns-title">Stay Connected</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <div class="sns-links">
+          <a href="https://www.instagram.com/onigiri.komedama?igsh=MXRsYmVnbmxiNncwYw==" target="_blank" rel="noopener noreferrer" class="sns-btn sns-ig">
+            📸 Instagram
+          </a>
+          <a href="https://www.tiktok.com/@onigiri.komedama?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="sns-btn sns-tiktok">
+            🎵 TikTok
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="section-header fade-in">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Get in <span class="acc">Touch</span></h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-desc">Questions about products, events, or collaborations? We'd love to hear from you.</p>
+        </div>
+        <div class="google-form-wrap fade-in">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScALvCP625DVWomPVhwGw1CGhiQK8gAbkyOa28ZDNepqT5XbA/viewform?embedded=true"
+            width="100%"
+            height="900"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="KOMEDAMA Contact Form"
+            loading="lazy"
+          >
+            Loading…
+          </iframe>
+          <p class="contact-note">
+            We typically respond within 2–3 business days.<br>
+            For urgent inquiries, feel free to DM us on Instagram.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="../images/logo/logo256px.png" alt="KOMEDAMA Logo" width="36" height="36">
+            <div class="logo-text">
+              <span class="logo-ja">米魂</span>
+              <span class="logo-en">KOMEDAMA</span>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            Bringing Japanese food culture<br>
+            and regional specialties to the world<br>
+            through mobile vending and e-commerce.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#locations">Event Schedule</a></li>
+            <li><a href="#shop">Online Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/onigiri.komedama?igsh=MXRsYmVnbmxiNncwYw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@onigiri.komedama?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+            <li><a href="https://komedama.base.shop" target="_blank" rel="noopener noreferrer">BASE Online Shop</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 米魂 KOMEDAMA. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Legal Notice</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+  <script src="../script.js"></script>
+
+</body>
+</html>
