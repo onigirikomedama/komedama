@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>米魂 KOMEDAMA</title>
-  <meta name="description" content="米魂 KOMEDAMA | 日本の食を、あなたのもとへ。Japanese Food, Delivered to You.">
+  <meta name="description" content="米魂 KOMEDAMA | 姫路から、おにぎりとの出会いを。Discover Onigiri in Himeji.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Playfair+Display:wght@700&family=Noto+Sans+JP:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
       --gold:      #B8860B;
       --gray:      #8C8070;
     }
-    html, body { width: 100%; height: 100%; }
+    html, body { width: 100%; min-height: 100%; }
     body {
       font-family: 'Noto Sans JP', sans-serif;
       background: var(--cream);
@@ -26,7 +26,7 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
     }
     .bg-decoration {
       position: fixed;
@@ -63,6 +63,7 @@
       text-align: center;
       padding: 40px 24px;
       animation: fadeUp 0.9s ease both;
+      width: 100%;
     }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -212,9 +213,12 @@
     }
     @media (max-width: 480px) {
       .lang-buttons { flex-direction: column; align-items: center; }
-      .lang-btn { width: 260px; }
+      .lang-btn { width: min(260px, 100%); }
       .brand-name-ja { font-size: 2rem; }
       .lang-logo img { width: 96px; height: 96px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
@@ -226,8 +230,8 @@
     </div>
     <div class="lang-divider" aria-hidden="true"></div>
     <p class="lang-tagline">
-      日本の食を、あなたのもとへ。<br>
-      Japanese Food, Delivered to You.
+      姫路から、おにぎりとの出会いを。<br>
+      Discover Onigiri in Himeji.
     </p>
     <span class="lang-select-label">Select Language / 言語を選択</span>
     <div class="lang-buttons">
@@ -244,7 +248,7 @@
         <span class="btn-arrow" aria-hidden="true">→</span>
       </a>
     </div>
-    <p class="lang-footer">© 2025 米魂 KOMEDAMA. All Rights Reserved.</p>
+    <p class="lang-footer">© 2026 米魂 KOMEDAMA. All Rights Reserved.</p>
   </div>
 </body>
 </html>
