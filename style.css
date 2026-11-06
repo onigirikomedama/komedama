@@ -703,6 +703,24 @@ section {
 .policy-content h2 { font-size: 1.15rem; color: var(--navy); margin-top: 32px; }
 .policy-content p, .policy-services { margin-top: 16px; }
 
+.experience-details, .seaweed-note {
+  margin-top: 32px;
+  padding: 32px;
+  background: var(--cream);
+  border-radius: 4px;
+}
+.experience-details h3, .experience-photo-note h3, .seaweed-note h3 {
+  color: var(--navy);
+  font-size: 1.1rem;
+}
+.experience-details ol { padding-left: 1.5em; margin-top: 20px; }
+.experience-details li + li { margin-top: 12px; }
+.experience-details p, .experience-photo-note p, .seaweed-note p { margin-top: 16px; }
+.experience-photo-note { margin-top: 32px; }
+.experience-photo-note a { color: var(--green); text-decoration: underline; text-underline-offset: 0.2em; }
+.seaweed-note { background: var(--white); }
+#photos { scroll-margin-top: 90px; }
+
 .product-card {
   background: var(--white);
   border-radius: 4px;
